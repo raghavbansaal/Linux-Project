@@ -1,3 +1,13 @@
 sudo lvs -o +devices
 sudo vgremove myvg
 sudo pvremove -ff /dev/sdb
+
+sudo lvs -o +devices
+sudo vgremove vgtest
+sudo pvremove -ff /dev/vgtest/lvtest
+
+
+to create a new sample disk
+
+dd if=/dev/zero of=lvm_test.img bs=1M count=1024
+sudo losetup /dev/loop10 lvm_test.img
