@@ -1,0 +1,3 @@
+sudo lvs -o +devices
+sudo vgremove myvg
+sudo pvremove -ff /dev/sdb
