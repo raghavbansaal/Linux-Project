@@ -3,18 +3,15 @@ if ! command -v dialog &> /dev/null; then
     echo "dialog is required but not installed. Please install it."
     exit 1
 fi
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-NC='\033[0m'
+
 show_error() {
-    dialog --msgbox "${RED}Error: $1${NC}" 8 60
+    dialog --msgbox "Error: $1" 8 60
 }
 show_success() {
-    dialog --msgbox "${GREEN}$1${NC}" 8 60
+    dialog --msgbox "$1" 8 60
 }
 show_warning() {
-    dialog --msgbox "${YELLOW}Warning: $1${NC}" 8 60
+    dialog --msgbox "Warning: $1" 8 60
 }
 get_input() {
     dialog --inputbox "$1" 10 50 3>&1 1>&2 2>&3
